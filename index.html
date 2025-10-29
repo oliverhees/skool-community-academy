@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Automation Engineers Academy - Skool Community</title>
+    <title>AI Automation Engineers - Learning Platform</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap');
 
@@ -83,18 +83,19 @@
 
         .login-logo h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 900;
             background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .login-logo p {
             color: rgba(255,255,255,0.6);
-            font-size: 16px;
+            font-size: 14px;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -188,7 +189,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0,102,255,0.2);
             z-index: 100;
@@ -205,387 +206,253 @@
 
         .nav-logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
             background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-progress {
+        .nav-menu {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             align-items: center;
         }
 
-        .progress-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 16px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 100px;
-            border: 1px solid rgba(0,102,255,0.2);
-        }
-
-        .progress-icon {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-
-        .progress-text {
-            font-size: 14px;
+        .nav-link {
             color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
         }
 
-        /* Content Sections */
-        .content-wrapper {
-            padding-top: 100px;
+        .nav-link:hover {
+            color: #00D4FF;
+            background: rgba(0,102,255,0.1);
+        }
+
+        .nav-link.active {
+            color: #00D4FF;
+            background: rgba(0,102,255,0.15);
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding-top: 120px;
             max-width: 1200px;
             margin: 0 auto;
             padding-left: 40px;
             padding-right: 40px;
+            padding-bottom: 80px;
+            text-align: center;
         }
 
-        .section {
-            margin-bottom: 100px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
+        .welcome-hero {
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .welcome-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .welcome-subtitle {
+            font-size: 24px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(90deg, rgba(0,102,255,0.2) 0%, rgba(0,212,255,0.2) 100%);
+            border: 1px solid rgba(0,102,255,0.3);
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #00D4FF;
         }
 
         @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .section-header {
-            margin-bottom: 50px;
+        /* Course Grid */
+        .courses-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px 100px 40px;
         }
 
-        .section-number {
-            display: inline-block;
-            padding: 5px 15px;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
-            border-radius: 100px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .section-header {
+            margin-bottom: 40px;
         }
 
         .section-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            margin-bottom: 15px;
         }
 
-        .section-subtitle {
-            font-size: 20px;
+        .section-description {
+            font-size: 18px;
             color: rgba(255,255,255,0.6);
             line-height: 1.6;
         }
 
-        /* Interactive Elements */
-        .interactive-card {
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .course-card {
             background: rgba(255,255,255,0.03);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0,102,255,0.2);
             border-radius: 24px;
             padding: 40px;
-            margin-bottom: 30px;
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
         }
 
-        .interactive-card:hover {
+        .course-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 60px rgba(0,102,255,0.3);
             border-color: rgba(0,212,255,0.4);
         }
 
-        .interactive-card.completed {
-            border-color: rgba(0,255,127,0.5);
-            background: rgba(0,255,127,0.05);
-        }
-
-        .interactive-card.completed::after {
-            content: '✓';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(90deg, #00ff7f 0%, #00D4FF 100%);
-            border-radius: 50%;
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(0,102,255,0.2) 0%, rgba(0,212,255,0.2) 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
-        .card-title {
+        .course-title {
             font-size: 24px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            color: #ffffff;
         }
 
-        .card-description {
+        .course-description {
             color: rgba(255,255,255,0.7);
             line-height: 1.6;
             margin-bottom: 20px;
+            font-size: 15px;
         }
 
-        .input-group {
+        .course-meta {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .input-field {
-            flex: 1;
-            padding: 12px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(0,102,255,0.2);
-            border-radius: 12px;
-            color: white;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .input-field:focus {
-            outline: none;
-            border-color: #0066FF;
-            background: rgba(0,102,255,0.05);
-        }
-
-        .submit-btn {
-            padding: 12px 30px;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
-            border: none;
-            border-radius: 100px;
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(0,102,255,0.4);
-        }
-
-        /* Quiz Section */
-        .quiz-container {
-            background: rgba(255,255,255,0.03);
-            border-radius: 24px;
-            padding: 40px;
-            margin: 30px 0;
-        }
-
-        .quiz-question {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .quiz-options {
-            display: grid;
-            gap: 15px;
-        }
-
-        .quiz-option {
-            padding: 20px;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(0,102,255,0.2);
-            border-radius: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .meta-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-
-        .quiz-option:hover {
-            border-color: #0066FF;
-            background: rgba(0,102,255,0.05);
-            transform: translateX(10px);
-        }
-
-        .quiz-option.selected {
-            border-color: #0066FF;
-            background: rgba(0,102,255,0.1);
-        }
-
-        .quiz-option.correct {
-            border-color: #00ff7f;
-            background: rgba(0,255,127,0.1);
-        }
-
-        .quiz-radio {
-            width: 24px;
-            height: 24px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .quiz-option.selected .quiz-radio::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
-            border-radius: 50%;
-        }
-
-        /* Progress Tracker */
-        .progress-tracker {
-            position: fixed;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 90;
-        }
-
-        .tracker-item {
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(0,102,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .tracker-item.active {
-            border-color: #0066FF;
-            background: rgba(0,102,255,0.1);
-            transform: scale(1.2);
-        }
-
-        .tracker-item.completed {
-            border-color: #00ff7f;
-            background: rgba(0,255,127,0.1);
-        }
-
-        .tracker-number {
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .tracker-tooltip {
-            position: absolute;
-            right: 80px;
-            background: rgba(0,0,0,0.9);
-            padding: 10px 20px;
-            border-radius: 12px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .tracker-item:hover .tracker-tooltip {
-            opacity: 1;
-        }
-
-        /* Results Dashboard */
-        .results-dashboard {
-            background: linear-gradient(135deg, rgba(0,102,255,0.1) 0%, rgba(0,212,255,0.1) 100%);
-            border-radius: 30px;
-            padding: 60px;
-            margin: 60px 0;
-            text-align: center;
-            border: 1px solid rgba(0,102,255,0.2);
-        }
-
-        .results-title {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .results-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(0,102,255,0.2);
-        }
-
-        .stat-number {
-            font-size: 42px;
-            font-weight: 900;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label {
-            color: rgba(255,255,255,0.6);
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            gap: 8px;
             font-size: 14px;
+            color: rgba(255,255,255,0.6);
         }
 
-        /* Download Section */
-        .download-section {
-            text-align: center;
-            padding: 60px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 30px;
-            margin: 60px 0;
+        .meta-icon {
+            font-size: 16px;
         }
 
-        .download-btn {
-            display: inline-block;
-            padding: 20px 60px;
-            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
+        .course-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 6px 14px;
             border-radius: 100px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            box-shadow: 0 20px 60px rgba(0,102,255,0.4);
+            letter-spacing: 0.5px;
         }
 
-        .download-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 80px rgba(0,102,255,0.6);
+        .status-new {
+            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
+            color: white;
+        }
+
+        .status-coming {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 100%);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .welcome-title {
+                font-size: 36px;
+            }
+
+            .welcome-subtitle {
+                font-size: 18px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
         }
 
         /* Loading Animation */
@@ -613,25 +480,6 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .progress-tracker {
-                display: none;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .results-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-progress {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -640,8 +488,8 @@
         <div class="login-bg"></div>
         <div class="login-box">
             <div class="login-logo">
-                <h1>AI AUTOMATION</h1>
-                <p>Engineers Academy</p>
+                <h1>AI Automation<br>Engineers</h1>
+                <p>Learning Platform</p>
             </div>
             <form id="loginForm">
                 <div class="form-group">
@@ -675,248 +523,196 @@
         <!-- Navigation -->
         <nav class="nav-header">
             <div class="nav-content">
-                <div class="nav-logo">AI AUTOMATION ACADEMY</div>
-                <div class="nav-progress">
-                    <div class="progress-item">
-                        <div class="progress-icon">1</div>
-                        <span class="progress-text">Grundlagen</span>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-icon">2</div>
-                        <span class="progress-text">Strategien</span>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-icon">3</div>
-                        <span class="progress-text">Umsetzung</span>
-                    </div>
+                <div class="nav-logo">AI Automation Engineers</div>
+                <div class="nav-menu">
+                    <a href="#" class="nav-link active" data-section="courses">Kurse</a>
+                    <a href="#" class="nav-link" data-section="progress">Fortschritt</a>
+                    <a href="#" class="nav-link" data-section="community">Community</a>
+                    <a href="#" class="nav-link" data-section="resources">Ressourcen</a>
                 </div>
             </div>
         </nav>
 
-        <!-- Progress Tracker Sidebar -->
-        <div class="progress-tracker">
-            <div class="tracker-item active" data-section="1">
-                <span class="tracker-number">1</span>
-                <span class="tracker-tooltip">Start</span>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-hero">
+                <div class="welcome-badge">
+                    👋 Willkommen zurück, <span id="userName">Member</span>!
+                </div>
+                <h1 class="welcome-title">Bereit zu lernen?</h1>
+                <p class="welcome-subtitle">
+                    Tauche ein in die Welt der AI-Automation und werde zum Experten.
+                    Hier findest du alle Kurse, Lektionen und Ressourcen für deine Lernreise.
+                </p>
             </div>
-            <div class="tracker-item" data-section="2">
-                <span class="tracker-number">2</span>
-                <span class="tracker-tooltip">Analyse</span>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="courses-section">
+            <div class="section-header">
+                <h2 class="section-title">Deine Lernpfade</h2>
+                <p class="section-description">
+                    Starte mit den Grundlagen oder springe direkt zu fortgeschrittenen Themen
+                </p>
             </div>
-            <div class="tracker-item" data-section="3">
-                <span class="tracker-number">3</span>
-                <span class="tracker-tooltip">Strategien</span>
+
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Course Card 1: Prompt Design -->
+                <div class="course-card" onclick="openCourse('prompt-design')">
+                    <span class="course-status status-new">NEU</span>
+                    <div class="course-icon">🎯</div>
+                    <h3 class="course-title">Prompt Design in n8n</h3>
+                    <p class="course-description">
+                        Lerne, wie du perfekte Prompts für AI-Workflows erstellst und optimierst.
+                        Von den Grundlagen bis zu fortgeschrittenen Techniken.
+                    </p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span>8 Lektionen</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>2.5 Stunden</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2: n8n Grundlagen -->
+                <div class="course-card" onclick="openCourse('n8n-basics')">
+                    <span class="course-status status-coming">Bald</span>
+                    <div class="course-icon">⚙️</div>
+                    <h3 class="course-title">n8n Grundlagen</h3>
+                    <p class="course-description">
+                        Meistere die Basics von n8n: Nodes, Workflows, Trigger und Expressions.
+                        Der perfekte Einstieg in die Automation.
+                    </p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span>12 Lektionen</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>4 Stunden</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3: AI Integration -->
+                <div class="course-card" onclick="openCourse('ai-integration')">
+                    <span class="course-status status-coming">Bald</span>
+                    <div class="course-icon">🤖</div>
+                    <h3 class="course-title">AI-Integration Masterclass</h3>
+                    <p class="course-description">
+                        Integriere ChatGPT, Claude, Midjourney und andere AI-Tools
+                        nahtlos in deine Workflows.
+                    </p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span>15 Lektionen</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>6 Stunden</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4: Business Automation -->
+                <div class="course-card" onclick="openCourse('business-automation')">
+                    <span class="course-status status-coming">Bald</span>
+                    <div class="course-icon">💼</div>
+                    <h3 class="course-title">Business Automation</h3>
+                    <p class="course-description">
+                        Automatisiere deine kompletten Business-Prozesse: CRM, Marketing,
+                        Sales und Customer Support.
+                    </p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span>20 Lektionen</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>8 Stunden</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Course Card 5: Advanced Workflows -->
+                <div class="course-card" onclick="openCourse('advanced-workflows')">
+                    <span class="course-status status-coming">Bald</span>
+                    <div class="course-icon">🚀</div>
+                    <h3 class="course-title">Advanced Workflows</h3>
+                    <p class="course-description">
+                        Fortgeschrittene Techniken: Error Handling, Performance Optimization,
+                        und komplexe Multi-Step-Workflows.
+                    </p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span>18 Lektionen</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>7 Stunden</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Course Card 6: Real-World Projects -->
+                <div class="course-card" onclick="openCourse('real-world-projects')">
+                    <span class="course-status status-coming">Bald</span>
+                    <div class="course-icon">🛠️</div>
+                    <h3 class="course-title">Real-World Projects</h3>
+                    <p class="course-description">
+                        Baue echte Projekte: Content-Automation, Lead-Generation-Systeme,
+                        automatisierte Reporting-Dashboards und mehr.
+                    </p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span>10 Projekte</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱️</span>
+                            <span>12 Stunden</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
             </div>
-            <div class="tracker-item" data-section="4">
-                <span class="tracker-number">4</span>
-                <span class="tracker-tooltip">Plan</span>
-            </div>
-            <div class="tracker-item" data-section="5">
-                <span class="tracker-number">5</span>
-                <span class="tracker-tooltip">Results</span>
-            </div>
-        </div>
-
-        <!-- Content Wrapper -->
-        <div class="content-wrapper">
-            <!-- Section 1: Welcome -->
-            <section class="section" id="section1">
-                <div class="section-header">
-                    <span class="section-number">SECTION 1</span>
-                    <h2 class="section-title">Willkommen in der AI Automation Journey! 🤖</h2>
-                    <p class="section-subtitle">
-                        Lass uns herausfinden, wo du stehst und welche Automation-Möglichkeiten für dich am besten passen.
-                    </p>
-                </div>
-
-                <div class="interactive-card" id="card1">
-                    <h3 class="card-title">💼 Deine aktuelle Situation</h3>
-                    <p class="card-description">
-                        Erzähl mir von deinem Business. Diese Info hilft mir, die perfekten AI-Automation-Strategien für dich zu entwickeln.
-                    </p>
-                    <div class="input-group">
-                        <input type="text" class="input-field" id="businessName" placeholder="Dein Business Name">
-                        <input type="text" class="input-field" id="industry" placeholder="Deine Branche">
-                        <button class="submit-btn" onclick="saveUserData()">Speichern</button>
-                    </div>
-                </div>
-
-                <div class="interactive-card" id="card2">
-                    <h3 class="card-title">🎯 Deine Automation-Ziele</h3>
-                    <p class="card-description">
-                        Was möchtest du in den nächsten 90 Tagen mit AI Automation erreichen?
-                    </p>
-                    <div class="input-group">
-                        <input type="text" class="input-field" id="mainGoal" placeholder="Hauptziel (z.B. Zeit sparen, Skalierung)">
-                        <input type="number" class="input-field" id="hoursSaved" placeholder="Gewünschte gesparte Stunden/Woche">
-                        <button class="submit-btn" onclick="saveGoals()">Ziele setzen</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 2: Analysis Quiz -->
-            <section class="section" id="section2" style="animation-delay: 0.2s">
-                <div class="section-header">
-                    <span class="section-number">SECTION 2</span>
-                    <h2 class="section-title">Deine Automation-Analyse 🔍</h2>
-                    <p class="section-subtitle">
-                        Lass uns herausfinden, welche AI-Tools und Strategien für dich optimal sind.
-                    </p>
-                </div>
-
-                <div class="quiz-container">
-                    <div class="quiz-question">
-                        Welche Aufgaben kosten dich aktuell die meiste Zeit?
-                    </div>
-                    <div class="quiz-options">
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>Content-Erstellung (Social Media, Blogs, etc.)</span>
-                        </div>
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>Kundenbetreuung & Support</span>
-                        </div>
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>Datenanalyse & Reporting</span>
-                        </div>
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>Administrative Aufgaben</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="quiz-container" style="margin-top: 40px;">
-                    <div class="quiz-question">
-                        Welche AI-Tools nutzt du bereits?
-                    </div>
-                    <div class="quiz-options">
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>ChatGPT, Claude oder andere LLMs</span>
-                        </div>
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>Make.com, Zapier oder n8n für Automation</span>
-                        </div>
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>AI-Design-Tools (Midjourney, DALL-E, etc.)</span>
-                        </div>
-                        <div class="quiz-option" onclick="selectOption(this)">
-                            <div class="quiz-radio"></div>
-                            <span>Noch keine AI-Tools im Einsatz</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 3: Personalized Strategies -->
-            <section class="section" id="section3" style="animation-delay: 0.4s">
-                <div class="section-header">
-                    <span class="section-number">SECTION 3</span>
-                    <h2 class="section-title">Deine personalisierten Strategien 💡</h2>
-                    <p class="section-subtitle">
-                        Basierend auf deinen Antworten, hier sind deine Top 3 AI-Automation-Strategien:
-                    </p>
-                </div>
-
-                <div class="interactive-card">
-                    <h3 class="card-title">🤖 Strategie #1: AI-Content-Automation</h3>
-                    <p class="card-description">
-                        Automatisiere deine Content-Erstellung mit AI. Welche Art von Content möchtest du automatisieren?
-                    </p>
-                    <div class="input-group">
-                        <input type="text" class="input-field" id="contentType" placeholder="z.B. Social Media Posts, Blog-Artikel" style="flex: 2">
-                        <button class="submit-btn" onclick="analyzeContent()">Analysieren</button>
-                    </div>
-                    <div id="contentFeedback" style="margin-top: 20px; display: none;">
-                        <p style="color: #00D4FF;">✨ Feedback wird generiert...</p>
-                    </div>
-                </div>
-
-                <div class="interactive-card">
-                    <h3 class="card-title">⚙️ Strategie #2: Workflow-Automation</h3>
-                    <p class="card-description">
-                        Automatisiere deine repetitiven Prozesse mit No-Code-Tools:
-                    </p>
-                    <div id="workflowSuggestions" style="margin-top: 20px;">
-                        <!-- Dynamically generated based on user input -->
-                    </div>
-                </div>
-
-                <div class="interactive-card">
-                    <h3 class="card-title">📊 Strategie #3: AI-Analytics & Insights</h3>
-                    <p class="card-description">
-                        Nutze AI für datengetriebene Entscheidungen in deinem Business
-                    </p>
-                </div>
-            </section>
-
-            <!-- Section 4: Action Plan -->
-            <section class="section" id="section4" style="animation-delay: 0.6s">
-                <div class="section-header">
-                    <span class="section-number">SECTION 4</span>
-                    <h2 class="section-title">Dein 90-Tage Automation Plan 📅</h2>
-                    <p class="section-subtitle">
-                        Dein personalisierter Schritt-für-Schritt Plan zur AI-Automation
-                    </p>
-                </div>
-
-                <div id="actionPlan">
-                    <!-- Dynamically generated action plan -->
-                </div>
-            </section>
-
-            <!-- Section 5: Results & Download -->
-            <section class="section" id="section5" style="animation-delay: 0.8s">
-                <div class="results-dashboard">
-                    <h2 class="results-title">🚀 Deine Potenzial-Prognose</h2>
-                    <div class="results-stats">
-                        <div class="stat-card">
-                            <div class="stat-number" id="projectedHours">20+</div>
-                            <div class="stat-label">Gesparte Stunden/Woche</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="projectedRevenue">€5K+</div>
-                            <div class="stat-label">Zusätzlicher Umsatz</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="projectedEfficiency">300%</div>
-                            <div class="stat-label">Effizienzsteigerung</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-section">
-                    <h3 style="font-size: 32px; margin-bottom: 20px;">
-                        🎁 Dein personalisierter Automation-Guide ist fertig!
-                    </h3>
-                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">
-                        Entdecke jetzt dein komplettes AI Automation System
-                    </p>
-                    <a href="#" class="download-btn" onclick="openPersonalizedGuide(); return false;">
-                        GUIDE ANZEIGEN
-                    </a>
-                </div>
-            </section>
-        </div>
+        </section>
     </div>
 
     <script>
-        // Configuration for N8n Webhook (to be configured)
-        const N8N_WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE'; // Replace with actual webhook URL
+        // Configuration
+        const N8N_WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE';
 
         // User data storage
         let userData = {
             email: '',
-            businessName: '',
-            industry: '',
-            goals: {},
-            quiz: {},
-            strategies: []
+            name: '',
+            progress: {}
         };
 
         // Login Form Handler
@@ -941,6 +737,8 @@
                 // Demo access for testing
                 if (code === 'DEMO2025' || code === 'AI2025') {
                     userData.email = email;
+                    userData.name = email.split('@')[0];
+
                     loginSuccess.style.display = 'block';
 
                     setTimeout(() => {
@@ -952,7 +750,6 @@
                         }, 500);
                     }, 1500);
                 } else {
-                    // Show error message
                     loginError.style.display = 'block';
                     loginBtn.disabled = false;
                     loginBtn.textContent = 'ZUGANG AKTIVIEREN';
@@ -968,196 +765,79 @@
         // Initialize App
         function initializeApp() {
             console.log('App initialized for user:', userData.email);
-            generatePersonalizedContent();
-            setupTrackers();
-        }
 
-        // Save User Data
-        function saveUserData() {
-            const businessName = document.getElementById('businessName').value;
-            const industry = document.getElementById('industry').value;
+            // Update welcome message with user name
+            document.getElementById('userName').textContent = userData.name;
 
-            if (businessName && industry) {
-                userData.businessName = businessName;
-                userData.industry = industry;
-
-                // Mark card as completed
-                document.getElementById('card1').classList.add('completed');
-
-                // Update progress
-                updateProgress();
-
-                // Show success feedback
-                showNotification('✅ Daten gespeichert!');
-            }
-        }
-
-        // Save Goals
-        function saveGoals() {
-            const mainGoal = document.getElementById('mainGoal').value;
-            const hoursSaved = document.getElementById('hoursSaved').value;
-
-            if (mainGoal && hoursSaved) {
-                userData.goals = {
-                    main: mainGoal,
-                    hours: parseInt(hoursSaved)
-                };
-
-                // Mark card as completed
-                document.getElementById('card2').classList.add('completed');
-
-                // Update progress
-                updateProgress();
-
-                // Generate personalized content
-                generatePersonalizedContent();
-
-                // Show success feedback
-                showNotification('🎯 Ziele gesetzt!');
-            }
-        }
-
-        // Quiz Option Selection
-        function selectOption(element) {
-            // Remove selected class from siblings
-            const parent = element.parentElement;
-            parent.querySelectorAll('.quiz-option').forEach(opt => {
-                opt.classList.remove('selected');
-            });
-
-            // Add selected class to clicked option
-            element.classList.add('selected');
-
-            // Store answer
-            const question = element.closest('.quiz-container').querySelector('.quiz-question').textContent;
-            userData.quiz[question] = element.textContent.trim();
-
-            // Update progress
-            updateProgress();
-            generatePersonalizedContent();
-        }
-
-        // Analyze Content
-        function analyzeContent() {
-            const contentType = document.getElementById('contentType').value;
-            const feedback = document.getElementById('contentFeedback');
-
-            if (contentType) {
-                userData.strategies.push(contentType);
-
-                // Show feedback
-                feedback.style.display = 'block';
-                feedback.innerHTML = `
-                    <p style="color: #00D4FF; font-weight: 600;">✨ Analyse für "${contentType}":</p>
-                    <ul style="margin-top: 15px; color: rgba(255,255,255,0.8);">
-                        <li>✅ Empfohlene Tools: ChatGPT, Claude, Jasper AI</li>
-                        <li>✅ Automatisierungspotenzial: 70-80% Zeitersparnis</li>
-                        <li>✅ Implementierungszeit: 2-4 Wochen</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: #00ff7f;">
-                        💡 Pro-Tipp: Starte mit Template-Erstellung für konsistente Ergebnisse!
-                    </p>
-                `;
-            }
-        }
-
-        // Generate Personalized Content
-        function generatePersonalizedContent() {
-            // Generate workflow suggestions
-            const workflow = document.getElementById('workflowSuggestions');
-            if (workflow && userData.industry) {
-                workflow.innerHTML = `
-                    <div style="display: grid; gap: 15px;">
-                        <div style="padding: 15px; background: rgba(0,102,255,0.1); border-radius: 12px;">
-                            <strong>Automation 1:</strong> CRM-Integration für ${userData.industry}
-                        </div>
-                        <div style="padding: 15px; background: rgba(0,212,255,0.1); border-radius: 12px;">
-                            <strong>Automation 2:</strong> E-Mail-Marketing-Sequenzen
-                        </div>
-                        <div style="padding: 15px; background: rgba(0,255,127,0.1); border-radius: 12px;">
-                            <strong>Automation 3:</strong> Automatisches Reporting
-                        </div>
-                    </div>
-                `;
+            // Load user progress from localStorage
+            const savedProgress = localStorage.getItem('userProgress');
+            if (savedProgress) {
+                userData.progress = JSON.parse(savedProgress);
+                updateProgressBars();
             }
 
-            // Generate action plan
-            const actionPlan = document.getElementById('actionPlan');
-            if (actionPlan && userData.goals.hours) {
-                actionPlan.innerHTML = `
-                    <div class="interactive-card">
-                        <h3 class="card-title">📈 Monat 1: Foundation</h3>
-                        <ul style="color: rgba(255,255,255,0.8); line-height: 2;">
-                            <li>AI-Tools Setup: ChatGPT, Claude, Make.com</li>
-                            <li>Erste Automation-Workflows erstellen</li>
-                            <li>Ziel: ${Math.round(userData.goals.hours * 0.3)} Stunden/Woche gespart</li>
-                        </ul>
-                    </div>
-                    <div class="interactive-card">
-                        <h3 class="card-title">🚀 Monat 2-3: Skalierung</h3>
-                        <ul style="color: rgba(255,255,255,0.8); line-height: 2;">
-                            <li>Erweiterte Workflows für ${userData.industry}</li>
-                            <li>Team-Integration & Training</li>
-                            <li>Ziel: ${userData.goals.hours}+ Stunden/Woche gespart!</li>
-                        </ul>
-                    </div>
-                `;
-            }
-
-            // Update projections
-            if (userData.goals.hours) {
-                document.getElementById('projectedHours').textContent = userData.goals.hours + '+';
-                document.getElementById('projectedRevenue').textContent = '€' + (userData.goals.hours * 100).toLocaleString() + '+';
-                document.getElementById('projectedEfficiency').textContent = Math.round(userData.goals.hours * 15) + '%';
-            }
+            // Setup navigation
+            setupNavigation();
         }
 
-        // Progress Tracking
-        function updateProgress() {
-            const completedCards = document.querySelectorAll('.interactive-card.completed').length;
-            const totalCards = document.querySelectorAll('.interactive-card').length;
-            const progress = (completedCards / totalCards) * 100;
+        // Setup Navigation
+        function setupNavigation() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
 
-            // Update tracker items
-            const trackerItems = document.querySelectorAll('.tracker-item');
-            const activeSection = Math.ceil((progress / 100) * trackerItems.length);
+                    // Remove active class from all links
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
 
-            trackerItems.forEach((item, index) => {
-                if (index < activeSection) {
-                    item.classList.add('completed');
-                }
-                if (index === activeSection - 1) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-        }
+                    // Add active class to clicked link
+                    link.classList.add('active');
 
-        // Setup Trackers
-        function setupTrackers() {
-            document.querySelectorAll('.tracker-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    const section = item.dataset.section;
-                    document.getElementById('section' + section).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const section = link.dataset.section;
+                    handleNavigation(section);
                 });
             });
         }
 
-        // Open personalized guide
-        function openPersonalizedGuide() {
-            // Save user data to localStorage for the next page
-            localStorage.setItem('userData', JSON.stringify(userData));
+        // Handle Navigation
+        function handleNavigation(section) {
+            console.log('Navigate to:', section);
 
-            // Show notification
-            showNotification('📖 Guide wird vorbereitet...');
+            switch(section) {
+                case 'courses':
+                    showNotification('Du bist bereits im Kurse-Bereich');
+                    break;
+                case 'progress':
+                    showNotification('Fortschritt-Dashboard kommt bald...');
+                    break;
+                case 'community':
+                    showNotification('Community-Bereich kommt bald...');
+                    break;
+                case 'resources':
+                    showNotification('Ressourcen-Bibliothek kommt bald...');
+                    break;
+            }
+        }
 
-            // In production, redirect to personalized guide page
-            setTimeout(() => {
-                alert('Dein personalisierter AI Automation Guide würde hier geöffnet werden. In der Vollversion erhältst du Zugriff auf die Skool Community!');
-            }, 1000);
+        // Open Course
+        function openCourse(courseId) {
+            console.log('Opening course:', courseId);
+
+            if (courseId === 'prompt-design') {
+                // This will be replaced with actual course content
+                window.location.href = `course.html?id=${courseId}`;
+            } else {
+                showNotification('Dieser Kurs ist noch nicht verfügbar. Stay tuned! 🚀');
+            }
+        }
+
+        // Update Progress Bars
+        function updateProgressBars() {
+            Object.keys(userData.progress).forEach(courseId => {
+                const progressBar = document.querySelector(`[onclick="openCourse('${courseId}')"] .progress-fill`);
+                if (progressBar) {
+                    progressBar.style.width = userData.progress[courseId] + '%';
+                }
+            });
         }
 
         // Show Notification
@@ -1175,6 +855,7 @@
                 font-weight: 600;
                 z-index: 10000;
                 animation: slideUp 0.5s ease;
+                box-shadow: 0 10px 40px rgba(0,102,255,0.4);
             `;
             notification.textContent = message;
             document.body.appendChild(notification);
