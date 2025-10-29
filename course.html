@@ -654,7 +654,114 @@
                 </p>
             </div>
 
-            <p><strong>Content wird geladen...</strong> Diese Lektion wird in Kürze verfügbar sein.</p>
+            <h3>Die System Message: Dein Agent Fundament</h3>
+            <p>
+                Die System Message wird <strong>vor Konversationsbeginn</strong> gesendet und steuert alle Agent-Entscheidungen.
+                Sie befindet sich unter "Options" → "Add Option" → "System Message" im AI Agent Node.
+            </p>
+
+            <div class="info-box warning">
+                <div class="info-box-title">⚠️ Wichtig</div>
+                <p>
+                    Der Standardwert "You are a helpful assistant" sollte <strong>IMMER</strong> angepasst werden!
+                    Eine generische System Message führt zu unvorhersehbarem Verhalten.
+                </p>
+            </div>
+
+            <h3>Anatomie einer effektiven System Message</h3>
+            <p>Eine gut strukturierte System Message folgt diesem Template:</p>
+
+            <div class="code-block"><pre>Du bist ein [spezifische Rolle] der [Hauptfunktion].
+
+Deine Aufgabe:
+1. [Erster Schritt im Workflow]
+2. [Zweiter Schritt]
+3. [Dritter Schritt]
+
+Verfügbare Tools:
+- tool_name: [Beschreibung wann und wie nutzen]
+- tool_name: [Beschreibung]
+
+Wichtige Einschränkungen:
+- [Was der Agent tun MUSS]
+- [Was der Agent NICHT tun soll]
+
+Bei Problemen:
+- [Fallback-Verhalten definieren]</pre></div>
+
+            <h3>Konkretes Beispiel: Research Agent</h3>
+            <div class="code-block"><pre>Du bist ein intelligenter Research-Assistent. Deine Aufgabe:
+
+1. Nutze das website_scraper Tool um die bereitgestellte URL zu scrapen
+2. Extrahiere Hauptinhalt, Titel und Schlüsselinformationen
+3. Generiere eine prägnante Zusammenfassung der Erkenntnisse
+4. Speichere die Recherche in Notion mit korrekter Formatierung
+5. Sende eine Discord-Benachrichtigung bei Abschluss
+
+Wichtige Einschränkungen:
+- Du MUSST immer zuerst das website_scraper Tool verwenden
+- Versuche NICHT ohne Scraping zusammenzufassen!
+- Füge immer die Original-URL in deine Notion-Page ein
+- Wähle ein passendes Emoji-Icon basierend auf dem Inhalt
+
+Workflow:
+- Nutze website_scraper Tool zuerst für Content
+- Verarbeite und analysiere den gescrapten Inhalt
+- Nutze save_to_notion um Informationen zu speichern
+- Abschließend discord_notification mit Link zur Notion-Page</pre></div>
+
+            <h3>User Prompt Konfiguration</h3>
+            <p>Der User Prompt hat zwei Optionen:</p>
+
+            <h4>1. "Take from previous node automatically"</h4>
+            <p>
+                Erwartet Input von einem Node namens <span class="code-inline">chatInput</span>.
+                Automatische Integration mit Chat Trigger, keine manuelle Expression nötig.
+            </p>
+
+            <h4>2. "Define below"</h4>
+            <p>
+                Ermöglicht custom Expressions oder statischen Text. Referenziert beliebige Node-Daten wie
+                <span class="code-inline">{{ $json.userQuery }}</span> oder
+                <span class="code-inline">Erzähle mir über {{ $json.topic }}</span>.
+            </p>
+
+            <h3>Die 11 essenziellen Prompting-Prinzipien</h3>
+            <p>Die n8n Community hat durch umfangreiche Tests 11 Kernprinzipien identifiziert:</p>
+
+            <div class="info-box">
+                <div class="info-box-title">1️⃣ Memory für Fortschritts-Tracking hinzufügen</div>
+                <p>Simple Memory Node mit 5-10 Messages bietet beste Balance. Konfiguriere Session Keys um separate Conversations pro User zu maintainen.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">2️⃣ Loops für komplexe Prozesse nutzen</div>
+                <p>Bei komplexen Workflows Work in Plan, Do, Review Loops aufteilen statt einen Agent alles machen zu lassen.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">3️⃣ Tool-Usage-Patterns explizit vorschlagen</div>
+                <p>Standard-Tool-Beschreibungen reichen oft nicht. Klartext: "Nutze zuerst Tool X, dann Tool Y".</p>
+            </div>
+
+            <ul>
+                <li><strong>4. Agent-Rolle klar definieren:</strong> Spezifische Rolle upfront: "Du bist ein Customer Support Agent der Produktfragen beantwortet"</li>
+                <li><strong>5. Tool-Nutzung explizit anweisen:</strong> WANN und WIE jedes Tool zu nutzen ist</li>
+                <li><strong>6. Wichtige Constraints hinzufügen:</strong> Explizite Grenzen setzen</li>
+                <li><strong>7. Beispiele bereitstellen:</strong> Konkrete Examples des erwarteten Verhaltens</li>
+                <li><strong>8. Konsistente Persönlichkeit etablieren:</strong> Kommunikationsstil definieren</li>
+                <li><strong>9. Strukturierten Denkprozess vorgeben:</strong> Reasoning-Ansatz vorgeben</li>
+                <li><strong>10. Fallback-Verhalten definieren:</strong> Was tun wenn Tasks nicht completebar</li>
+                <li><strong>11. Context-Aware Instructions:</strong> Expressions für Personalisierung nutzen</li>
+            </ul>
+
+            <div class="info-box success">
+                <div class="info-box-title">💡 Pro-Tipp</div>
+                <p>
+                    Nutze Expressions in der System Message für dynamische Anpassung:<br>
+                    <span class="code-inline">Du kommunizierst mit einem User namens {{ $json.message.from.first_name }}</span>
+                </p>
+            </div>
 
             <div class="lesson-navigation">
                 <a href="#" class="nav-lesson-btn" onclick="goToLesson(1); return false;">
